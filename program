@@ -1,0 +1,49 @@
+<button onclick=salario()> Salário Atual </button>
+<button onclick=ferias()> Férias </button>
+<button onclick=decimoTerceiro()> Décimo Terceiro </button>
+<button onclick=exit()> Sair </button>
+
+<script>
+    function salario() {
+        let sal = parseInt(prompt("Qual o salário atual do funcionário?"));
+
+        if (sal < 1200){
+        sal = (sal/100 * 115);
+        alert("O novo salário é igual a R$" + sal.toFixed(2));
+        }
+
+        if (sal >= 1200 && sal <= 2400){
+        sal = (sal/100 * 110);
+        alert("O novo salário é igual a R$" + sal.toFixed(2));
+        }
+
+        if (sal > 2400){
+        sal = (sal/100 * 105);
+        alert("O novo salário é igual a R$" + sal.toFixed(2));
+        }
+
+    }
+
+    function ferias(){
+        let sal = parseInt(prompt("Qual o salário atual do funcionário?"));
+        sal = sal + (sal/3);
+
+        alert("As férias do funcionário são iguais a R$" + sal.toFixed(2));
+
+    }
+
+    function decimoTerceiro(){
+        let sal = parseInt(prompt("Qual o salário atual do funcionário?"));
+        let meses = parseInt(prompt("Quantos meses o funcionário trabalhou?"));
+
+        sal = (sal * meses)/12;
+
+        alert("O décimo terceiro deste funcionário é igual a R$" + sal.toFixed(2));
+
+    }
+
+    function exit(){
+        if (confirm("Fechar programa?")) {
+        close();
+        }}
+</script>
